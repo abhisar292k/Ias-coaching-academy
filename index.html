@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competition Hackers IAS/PCS Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Language Selector Modal -->
+    <div class="modal fade" id="languageModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-translate="selectLanguage">Select Language / भाषा चुनें</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="language-options">
+                        <button class="lang-btn" onclick="changeLanguage('en')">
+                            <span class="lang-icon">🇬🇧</span>
+                            <span class="lang-name">English</span>
+                        </button>
+                        <button class="lang-btn" onclick="changeLanguage('hi')">
+                            <span class="lang-icon">🇮🇳</span>
+                            <span class="lang-name">हिंदी</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar text-white">
+        <div class="container">
+            <div class="top-bar-wrapper">
+                <div class="contact-info">
+                    <a href="tel:09569102053" class="text-white">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>9876543210</span>
+                    </a>
+                    <a href="mailto:competitionhackers@gmail.com" class="text-white">
+                        <i class="fas fa-envelope"></i>
+                        <span>competitionha*****@gmail.com</span>
+                    </a>
+                </div>
+                <div class="language-switcher">
+                    <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#languageModal">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">English</span>
+                    </button>
+                </div>
+                <div class="social-button-wrapper">
+                    <button class="btn btn-outline-light btn-sm" onclick="openSocialPopup()">
+                        <i class="fas fa-share-alt"></i> 
+                        <span data-translate="socialMedia">Social Media</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header py-3">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="navbar-brand d-flex align-items-center">
+                    <div class="logo-wrapper">
+                        <div class="logo-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                            <i class="fas fa-book-reader logo-overlay"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1 class="logo">Competition Hackers</h1>
+                            <p class="slogan mb-0" data-translate="slogan">Empowering Future Civil Servants</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-translate="home">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-translate="aboutUs">About Us</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" data-translate="ourVision">Our Vision</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="ourMission">Our Mission</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="directorMessage">Director's Message</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="ourTeam">Our Team</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-translate="courses">Courses</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" data-translate="upscCourses">UPSC Courses</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="bpscCourses">BPSC Courses</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="optionalSubjects">Optional Subjects</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="foundationCourse">Foundation Course</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="testSeries">Test Series</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-translate="resources">Resources</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" data-translate="studyMaterials">Study Materials</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="previousYearPapers">Previous Year Papers</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="currentAffairs">Current Affairs</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="essayWriting">Essay Writing</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="dailyNewsPaper">Daily News Analysis</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="mockTests">Mock Tests</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-translate="results">Results</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" data-translate="successStories">Success Stories</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="testimonials">Testimonials</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="rankHolders">Rank Holders</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-translate="gallery">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-translate="contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Add this before the Hero Section -->
+    <div id="socialPopup" class="popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closeSocialPopup()">×</button>
+            <h3 data-translate="connectWithUs">Connect With Us</h3>
+            <div class="social-links">
+                <a href="https://facebook.com/your-page" target="_blank" class="social-link facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/your-handle" target="_blank" class="social-link twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/your-profile" target="_blank" class="social-link instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://play.google.com/store/apps/your-app" target="_blank" class="social-link google-play">
+                    <i class="fab fa-google-play"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="row align-items-center hero-content">
+                <div class="col-lg-7 col-md-12">
+                    <div class="hero-text">
+                        <span class="experience-badge">
+                            <i class="fas fa-star"></i>
+                            <span data-translate="yearsExperience">11 Years of Excellence</span>
+                        </span>
+                        <h1 class="hero-title">
+                            <span data-translate="heroTitle">Shape Your Future in Civil Services</span>
+                            <span class="highlight" data-translate="heroSubtitle">With Expert Guidance</span>
+                        </h1>
+                        <p class="hero-subtitle" data-translate="instituteRanking">
+                            Ranked #7 Among Top IAS Coaching Centers in Jalandhar
+                        </p>
+                        <div class="hero-features">
+                            <div class="feature">
+                                <i class="fas fa-user-graduate"></i>
+                                <span data-translate="expertFaculty">Expert Faculty</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-book-reader"></i>
+                                <span data-translate="studyMaterial">Comprehensive Study Material</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-users"></i>
+                                <span data-translate="batchSize">Small Batch Size</span>
+                            </div>
+                        </div>
+                        <div class="hero-cta">
+                            <a href="#courses" class="btn btn-primary btn-lg">
+                                <span data-translate="exploreCourses">Explore Courses</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">
+                                <span data-translate="contactUs">Contact Us</span>
+                                <i class="fas fa-phone-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <h3>11+</h3>
+                            <p data-translate="yearsExp">Years Experience</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3>Top 10</h3>
+                            <p data-translate="rankedInstitute">Ranked Institute</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>6+</h3>
+                            <p data-translate="specializedCourses">Specialized Courses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span data-translate="scrollExplore">Scroll to explore</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+        <!-- About & Features Section -->
+        <section class="about-section">
+            <div class="container">
+                <!-- About Us -->
+                <div class="row align-items-center about-wrapper">
+                    <div class="col-lg-6">
+                        <div class="about-content">
+                            <span class="section-subtitle" data-translate="aboutUsSubtitle">About Us</span>
+                            <h2 class="section-title" data-translate="aboutTitle">Leading IAS/PCS Coaching Institute in Jalandhar</h2>
+                            <p class="about-description" data-translate="aboutDescription">
+                                Competition Hackers is a premier civil services coaching institute with 11 years of excellence in shaping future civil servants. As the #7 ranked IAS coaching center in Jalandhar, we pride ourselves on our comprehensive approach to UPSC and state services preparation.
+                            </p>
+                            <div class="achievement-cards">
+                                <div class="achievement-card">
+                                    <i class="fas fa-medal"></i>
+                                    <h4 data-translate="rankNumber">Rank #7</h4>
+                                    <p data-translate="inJalandhar">In Jalandhar</p>
+                                </div>
+                                <div class="achievement-card">
+                                    <i class="fas fa-history"></i>
+                                    <h4>11+ Years</h4>
+                                    <p data-translate="ofExcellence">Of Excellence</p>
+                                </div>
+                                <div class="achievement-card">
+                                    <i class="fas fa-users"></i>
+                                    <h4 data-translate="smallBatches">Small Batches</h4>
+                                    <p data-translate="personalAttention">Personal Attention</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                </div>
+                                <h3 data-translate="expertFacultyTitle">Expert Faculty</h3>
+                                <p data-translate="expertFacultyDesc">Learn from industry specialists with proven track record</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <h3 data-translate="standardMaterialTitle">Standard Material</h3>
+                                <p data-translate="standardMaterialDesc">Comprehensive study materials covering advanced topics</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h3 data-translate="flexibleScheduleTitle">Flexible Schedule</h3>
+                                <p data-translate="flexibleScheduleDesc">Separate batches for students and professionals</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3 data-translate="regularAssessmentTitle">Regular Assessment</h3>
+                                <p data-translate="regularAssessmentDesc">Build knowledge through tests and evaluations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Why Choose Us -->
+                <div class="why-choose-us">
+                    <h3 class="text-center mb-5" data-translate="benefitsTitle">Benefits of Joining Competition Hackers Academy</h3>
+                    <div class="row benefits-grid">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="benefit-card">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h4 data-translate="industryExpertsTitle">Industry Experts</h4>
+                                <p data-translate="industryExpertsDesc">Gain insights from experienced faculty members</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="benefit-card">
+                                <i class="fas fa-book-reader"></i>
+                                <h4 data-translate="systematicCurriculumTitle">Systematic Curriculum</h4>
+                                <p data-translate="systematicCurriculumDesc">Well-developed and planned study program</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="benefit-card">
+                                <i class="fas fa-users"></i>
+                                <h4 data-translate="smallBatchSizeTitle">Small Batch Size</h4>
+                                <p data-translate="smallBatchSizeDesc">Personalized attention for better learning</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="benefit-card">
+                                <i class="fas fa-comments"></i>
+                                <h4 data-translate="interactiveLearningTitle">Interactive Learning</h4>
+                                <p data-translate="interactiveLearningDesc">Regular discussions and doubt clearing sessions</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="benefit-card">
+                                <i class="fas fa-clock"></i>
+                                <h4 data-translate="flexibleScheduleTitle">Flexible Schedule</h4>
+                                <p data-translate="flexibleScheduleDesc">Convenient timing for different groups</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="benefit-card">
+                                <i class="fas fa-rupee-sign"></i>
+                                <h4 data-translate="competitiveFeesTitle">Competitive Fees</h4>
+                                <p data-translate="competitiveFeesDesc">Quality education at affordable rates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+ <!-- Latest Updates Section -->
+ <section class="news-updates-dashboard">
+    <div class="container">
+        <div class="row">
+            <!-- Video Section -->
+            <div class="col-lg-7">
+                <div class="news-section-header">
+                    <h2><i class="fas fa-play-circle"></i> <span data-translate="latestVideos">Live & Latest Videos</span></h2>
+                    <p class="news-section-subtitle" data-translate="stayUpdated">Stay updated with our expert faculty lectures and current affairs analysis</p>
+                </div>
+                
+                <!-- Featured Video -->
+                <div class="news-featured-video mb-4">
+                    <div class="news-video-badge">
+                        <i class="fas fa-star"></i> <span data-translate="featured">Featured</span>
+                    </div>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/U7ITMO8xV6I" 
+                                title="UPSC CSE 2024 Strategy Session" 
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="news-video-info">
+                        <div class="news-video-title">
+                            <h3><i class="fas fa-play-circle"></i> <span data-translate="strategySession">UPSC CSE 2024 Complete Strategy Session</span></h3>
+                            <span class="news-live-badge">
+                                <i class="fas fa-broadcast-tower"></i> <span data-translate="live">LIVE</span>
+                            </span>
+                        </div>
+                        <div class="news-video-meta">
+                            <span><i class="fas fa-calendar"></i> <span data-translate="latest">Latest</span></span>
+                            <span><i class="fas fa-users"></i> 2.5K <span data-translate="watching">watching</span></span>
+                            <span><i class="fas fa-clock"></i> 2:45:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Grid -->
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="news-video-item">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/dZ5Zz4bzdqM" 
+                                        title="Current Affairs Analysis" 
+                                        allowfullscreen></iframe>
+                            </div>
+                            <div class="news-video-info">
+                                <h4 data-translate="currentAffairsAnalysis">Daily Current Affairs Analysis</h4>
+                                <div class="news-video-meta">
+                                    <span><i class="fas fa-calendar"></i> <span data-translate="today">Today</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="news-video-item">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/Oi74Jg6_2T4" 
+                                        title="Indian Economy Analysis" 
+                                        allowfullscreen></iframe>
+                            </div>
+                            <div class="news-video-info">
+                                <h4 data-translate="indianEconomy">Indian Economy Master Class</h4>
+                                <div class="news-video-meta">
+                                    <span><i class="fas fa-calendar"></i> <span data-translate="yesterday">Yesterday</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What's New Section -->
+            <div class="col-lg-5">
+                <div class="news-section-header">
+                    <h2><i class="fas fa-newspaper"></i> <span data-translate="whatsNew">What's New</span></h2>
+                    <p class="news-section-subtitle" data-translate="civilServicesUpdates">Latest updates from the world of civil services</p>
+                </div>
+                <div class="news-updates-container news-custom-scrollbar">
+                    <!-- Update 1 -->
+                    <div class="news-update-card">
+                        <div class="news-update-content">
+                            <div class="news-update-header">
+                                <span class="news-date-badge"><i class="fas fa-calendar-alt"></i> Dec 17, 2024</span>
+                                <span class="news-category-badge">Current Affairs</span>
+                            </div>
+                            <h3>Decline in Migrant Workers in U.S. Labor Force: ILO</h3>
+                            <p>In 2022, international migration reached 284.5 million individuals worldwide. The International Labour Organization (ILO) noted that 167.7 million migrants were actively participating in the workforce.</p>
+                            <div class="news-update-meta">
+                                <div class="news-meta-info">
+                                    <span><i class="fas fa-book-reader"></i> 5 <span data-translate="minRead">min read</span></span>
+                                    <span><i class="fas fa-tag"></i> Economy</span>
+                                </div>
+                                <a href="/articles/migrant-workers-2024.html" class="news-btn-read-more" target="_blank">
+                                    <span data-translate="readFullArticle">Read Full Article</span> <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Update 2 -->
+                    <div class="news-update-card">
+                        <div class="news-update-content">
+                            <div class="news-update-header">
+                                <span class="news-date-badge"><i class="fas fa-calendar-alt"></i> Dec 17, 2024</span>
+                                <span class="news-category-badge">Defense</span>
+                            </div>
+                            <h3>SLINEX 2024 Naval Exercise</h3>
+                            <p>SLINEX 2024 is set to take place from December 17 to 20 off the coast of Visakhapatnam, organised by the Eastern Naval Command, and involves India and Sri Lanka.</p>
+                            <div class="news-update-meta">
+                                <div class="news-meta-info">
+                                    <span><i class="fas fa-book-reader"></i> 3 <span data-translate="minRead">min read</span></span>
+                                    <span><i class="fas fa-tag"></i> Defense</span>
+                                </div>
+                                <a href="/articles/slinex-2024.html" class="news-btn-read-more" target="_blank">
+                                    <span data-translate="readFullArticle">Read Full Article</span> <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Update 3 -->
+                    <div class="news-update-card">
+                        <div class="news-update-content">
+                            <div class="news-update-header">
+                                <span class="news-date-badge"><i class="fas fa-calendar-alt"></i> Dec 17, 2024</span>
+                                <span class="news-category-badge">Education</span>
+                            </div>
+                            <h3>Gati Shakti Vishwavidyalaya and Indian Navy Partnership</h3>
+                            <p>The MoU focuses on enhancing logistics education, research, and executive training to boost operational efficiency. Indian Navy will leverage Gati Shakti Vishwavidyalaya's expertise.</p>
+                            <div class="news-update-meta">
+                                <div class="news-meta-info">
+                                    <span><i class="fas fa-book-reader"></i> 4 <span data-translate="minRead">min read</span></span>
+                                    <span><i class="fas fa-tag"></i> Governance</span>
+                                </div>
+                                <a href="/articles/gati-shakti-navy-partnership.html" class="news-btn-read-more" target="_blank">
+                                    <span data-translate="readFullArticle">Read Full Article</span> <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Current Affairs Section -->
+<section class="current-affairs-section">
+    <div class="container">
+        <div class="ca-header text-center">
+            <span class="ca-subtitle" data-translate="currentAffairs">Current Affairs</span>
+            <h2 data-translate="dailyUpdates">Daily Updates</h2>
+            <p class="ca-description" data-translate="stayInformed">Stay informed with the latest news and events relevant to UPSC</p>
+        </div>
+
+        <div class="ca-container">
+            <!-- News Categories -->
+            <div class="ca-categories">
+                <button class="ca-category-btn active" data-category="all">All News</button>
+                <button class="ca-category-btn" data-category="national">National</button>
+                <button class="ca-category-btn" data-category="international">International</button>
+                <button class="ca-category-btn" data-category="economy">Economy</button>
+                <button class="ca-category-btn" data-category="environment">Environment</button>
+            </div>
+
+            <!-- News Feed Container -->
+            <div class="ca-feed" id="newsFeed">
+                <!-- News items will be dynamically inserted here -->
+                <div class="ca-loader">
+                    <div class="spinner"></div>
+                    <p data-translate="loadingNews">Loading latest updates...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  <!-- Courses Section -->
+  <section class="courses-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+            <span class="section-subtitle" data-translate="ourPrograms">Our Programs</span>
+            <h2 data-translate="comprehensivePreparation">Comprehensive UPSC Preparation</h2>
+            <p class="section-description" data-translate="choosePrograms">Choose from our specially designed courses to achieve your dream of becoming a Civil Servant</p>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="row courses-grid">
+            <!-- GS Foundation Course -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="course-card">
+                    <div class="course-badge" data-translate="mostPopular">Most Popular</div>
+                    <div class="course-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3 data-translate="gsFoundationCourse">GS Foundation Course</h3>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-translate="comprehensiveStudyMaterial">Comprehensive Study Material</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-translate="regularMockTests">Regular Mock Tests</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-translate="dailyAnswerWriting">Daily Answer Writing</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-translate="currentAffairsClasses">Current Affairs Classes</span></li>
+                    </ul>
+                    <div class="course-duration">
+                        <i class="far fa-clock"></i> <span data-translate="duration">Duration</span>: 1 Year
+                    </div>
+                    <a href="#" class="btn-course-details">
+                        <span data-translate="courseDetails">Course Details</span> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Optional Subjects -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 data-translate="optionalSubjectsTitle">Optional Subjects</h3>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-translate="subjectSpecificMaterial">Subject Specific Material</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-translate="expertFacultyFeature">Expert Faculty</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-translate="previousYearAnalysis">Previous Year Analysis</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-translate="topicWiseTests">Topic-wise Tests</span></li>
+                    </ul>
+                    <div class="course-duration">
+                        <i class="far fa-clock"></i> <span data-translate="duration">Duration</span>: 6 Months
+                    </div>
+                    <a href="#" class="btn-course-details">
+                        <span data-translate="courseDetails">Course Details</span> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Interview Preparation -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 data-translate="interviewPreparation">Interview Preparation</h3>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-translate="mockInterviews">Mock Interviews</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-translate="personalityDevelopment">Personality Development</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-translate="dafAnalysis">DAF Analysis</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-translate="expertGuidance">Expert Guidance</span></li>
+                    </ul>
+                    <div class="course-duration">
+                        <i class="far fa-clock"></i> <span data-translate="duration">Duration</span>: 2 Months
+                    </div>
+                    <a href="#" class="btn-course-details">
+                        <span data-translate="courseDetails">Course Details</span> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Features -->
+        <div class="course-features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h4 data-translate="expertFacultyFeature">Expert Faculty</h4>
+                <p data-translate="expertGuidance">Learn from experienced mentors</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h4 data-translate="studyMaterial">Study Material</h4>
+                <p data-translate="comprehensiveStudyMaterial">Comprehensive study resources</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h4 data-translate="onlineSupport">Online Support</h4>
+                <p data-translate="twentyFourSeven">24/7 doubt resolution</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4 data-translate="performanceTracking">Performance Tracking</h4>
+                <p data-translate="progressMonitoring">Regular progress monitoring</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="elite-faculty-section">
+    <div class="elite-container">
+        <div class="elite-header">
+            <span class="elite-subtitle" data-translate="eliteExpert">Meet Our Expert</span>
+            <h2 class="elite-title" data-translate="learnFromBest">Learn from the Best</h2>
+            <p class="elite-description" data-translate="mentorDescription">Get mentored by experienced civil servants who understand the journey</p>
+        </div>
+
+        <div class="elite-profile">
+            <div class="elite-profile-grid">
+                <div class="elite-image-section">
+                    <div class="elite-image-container">
+                        <img src="images/samratsir.png" alt=" Sir - IPS/IAS Mentor" class="elite-mentor-img">
+                        <div class="elite-exp-badge">
+                            <span class="elite-years">10+</span>
+                            <span class="elite-exp-text" data-translate="yearsOfExperience">Years of<br>Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="elite-content-section">
+                    <div class="elite-mentor-info">
+                        <div class="elite-mentor-header">
+                            <h3>Sir</h3>
+                            <span class="elite-designation" data-translate="ipsMentor">IPS/IAS Mentor</span>
+                        </div>
+                        <div class="elite-mentor-bio">
+                            <p data-translate="mentorBio">A distinguished civil servant and dedicated mentor, Samraat Sir brings years of invaluable experience in guiding UPSC aspirants. His unique teaching methodology and deep understanding of civil services have helped numerous students achieve their dreams.</p>
+                        </div>
+                        <div class="elite-achievements">
+                            <div class="elite-achievement-item">
+                                <div class="elite-icon-wrapper">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <h4 data-translate="expertGuidanceTitle">Expert Guidance</h4>
+                                <p data-translate="personalizedMentoring">Personalized mentoring approach</p>
+                            </div>
+                            <div class="elite-achievement-item">
+                                <div class="elite-icon-wrapper">
+                                    <i class="fas fa-book-reader"></i>
+                                </div>
+                                <h4 data-translate="strategicPlanning">Strategic Planning</h4>
+                                <p data-translate="provenStrategies">Proven preparation strategies</p>
+                            </div>
+                            <div class="elite-achievement-item">
+                                <div class="elite-icon-wrapper">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h4 data-translate="successRate">Success Rate</h4>
+                                <p data-translate="exceptionalResults">Exceptional student results</p>
+                            </div>
+                        </div>
+                        <div class="elite-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <blockquote data-translate="mentorQuote">
+                                "Success in UPSC is not just about hard work, it's about smart work and the right guidance."
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ch-testimonials-section"></section>
+    <div class="container">
+        <div class="ch-section-header text-center">
+            <span class="ch-section-subtitle" data-translate="testimonials">Testimonials</span>
+            <h2 data-translate="whatStudentsSay">What Our Students Say</h2>
+            <p class="ch-section-description" data-translate="testimonialDescription">Hear from our successful students who transformed their UPSC journey with us</p>
+        </div>
+
+        <div class="ch-testimonials-grid">
+            <!-- Student Testimonial -->
+            <div class="ch-testimonial-card student-testimonial">
+                <div class="ch-testimonial-header">
+                    <div class="ch-testimonial-image">
+                        <img src="images/student-testimonial.jpg" alt="Mannat Gupta">
+                    </div>
+                    <div class="ch-testimonial-meta">
+                        <h4 data-translate="studentSuccess">Student Success Story</h4>
+                        <div class="ch-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <blockquote class="ch-testimonial-content">
+                    <p data-translate="topperQuote">Under Samraat Sir's guidance at Competition Hackers, I found the perfect blend of strategic preparation and personalized mentoring. The institute's approach to UPSC preparation is unique and effective.</p>
+                </blockquote>
+                <div class="ch-testimonial-footer">
+                    <div class="ch-student-info">
+                        <h5 data-translate="studentName">Mannat Gupta</h5>
+                        <span data-translate="studentBatch">UPSC CSE 2023 Batch</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mentor Testimonial -->
+            <div class="ch-testimonial-card mentor-testimonial">
+                <div class="ch-testimonial-header">
+                    <div class="ch-testimonial-image">
+                        <img src="images/samratsir.png" alt="Samraat Sir">
+                    </div>
+                    <div class="ch-testimonial-meta">
+                        <h4 data-translate="instructorTestimonial">Mentor's Message</h4>
+                    </div>
+                </div>
+                <blockquote class="ch-testimonial-content">
+                    <p data-translate="samraatMessage">At Competition Hackers, we believe in nurturing not just aspirants, but future leaders. Our commitment goes beyond coaching - we build careers and shape personalities.</p>
+                </blockquote>
+                <div class="ch-testimonial-footer">
+                    <div class="ch-mentor-info">
+                        <h5>Samraat Sir</h5>
+                        <span data-translate="samraatDesignation">IPS/IAS Mentor, Competition Hackers</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abhisar's Testimonial -->
+            <div class="ch-testimonial-card student-testimonial">
+                <div class="ch-testimonial-header">
+                    <div class="ch-testimonial-image">
+                        <img src="images/student-abhisar.jpg" alt="Abhisar Sharma">
+                    </div>
+                    <div class="ch-testimonial-meta">
+                        <h4 data-translate="studentSuccess">Student Success Story</h4>
+                        <div class="ch-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <blockquote class="ch-testimonial-content">
+                    <p data-translate="abhisarQuote">The structured approach and daily current affairs sessions at Competition Hackers helped me build a strong foundation. Samraat Sir's guidance was invaluable throughout my preparation.</p>
+                </blockquote>
+                <div class="ch-testimonial-footer">
+                    <div class="ch-student-info">
+                        <h5 data-translate="abhisarName">Abhisar Sharma</h5>
+                        <span data-translate="abhisarBatch">UPSC CSE 2023 Batch</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rahul's Testimonial -->
+            <div class="ch-testimonial-card student-testimonial">
+                <div class="ch-testimonial-header">
+                    <div class="ch-testimonial-image">
+                        <img src="images/student-rahul.jpg" alt="Rahul Kumar">
+                    </div>
+                    <div class="ch-testimonial-meta">
+                        <h4 data-translate="studentSuccess">Student Success Story</h4>
+                        <div class="ch-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <blockquote class="ch-testimonial-content">
+                    <p data-translate="rahulQuote">What sets Competition Hackers apart is their personalized attention and comprehensive study material. The mock tests and answer writing practice sessions were game-changers for me.</p>
+                </blockquote>
+                <div class="ch-testimonial-footer">
+                    <div class="ch-student-info">
+                        <h5 data-translate="rahulName">Rahul Kumar</h5>
+                        <span data-translate="rahulBatch">UPSC CSE 2022 Batch</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rohit's Testimonial -->
+            <div class="ch-testimonial-card student-testimonial">
+                <div class="ch-testimonial-header">
+                    <div class="ch-testimonial-image">
+                        <img src="images/student-rohit.jpg" alt="Rohit Singh">
+                    </div>
+                    <div class="ch-testimonial-meta">
+                        <h4 data-translate="studentSuccess">Student Success Story</h4>
+                        <div class="ch-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <blockquote class="ch-testimonial-content">
+                    <p data-translate="rohitQuote">The faculty's dedication and Samraat Sir's mentorship made complex topics easy to understand. The institute's innovative teaching methods and regular doubt clearing sessions were extremely helpful.</p>
+                </blockquote>
+                <div class="ch-testimonial-footer">
+                    <div class="ch-student-info">
+                        <h5 data-translate="rohitName">Rohit Singh</h5>
+                        <span data-translate="rohitBatch">UPSC CSE 2023 Batch</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Institute Stats -->
+        <div class="ch-institute-stats">
+            <h3 data-translate="instituteHighlight">Leading UPSC Coaching in Jalandhar</h3>
+            <div class="ch-stats-grid">
+                <div class="ch-stat-item">
+                    <span class="ch-stat-number">10+</span>
+                    <span class="ch-stat-label" data-translate="yearsTeaching">Years of Teaching Excellence</span>
+                </div>
+                <div class="ch-stat-item">
+                    <span class="ch-stat-number">1000+</span>
+                    <span class="ch-stat-label" data-translate="successfulStudents">Successful Students</span>
+                </div>
+                <div class="ch-stat-item">
+                    <span class="ch-stat-number">15+</span>
+                    <span class="ch-stat-label" data-translate="expertFaculty">Expert Faculty Members</span>
+                </div>
+            </div>
+            <a href="#" class="ch-testimonial-btn" data-translate="readMoreTestimonials">Read More Success Stories</a>
+        </div>
+    </div>
+</section>
+<!-- Enhanced Contact Section -->
+<section class="ch-contact-section">
+    <div class="container">
+        <div class="ch-section-header text-center">
+            <span class="ch-section-subtitle" data-translate="getInTouch">Get in Touch</span>
+            <h2 data-translate="contactUs">Contact Us</h2>
+            <p class="ch-section-description" data-translate="contactDescription">Have questions? We're here to help you achieve your UPSC dreams</p>
+        </div>
+
+        <div class="ch-contact-wrapper">
+            <!-- Contact Form Column -->
+            <div class="ch-contact-grid">
+                <div class="ch-form-container">
+                    <div class="ch-form-header">
+                        <div class="ch-form-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <h3 data-translate="sendMessage">Send us a Message</h3>
+                        <p data-translate="formDescription">Fill out the form below, and we'll get back to you shortly</p>
+                    </div>
+
+                    <form id="contactForm" class="ch-contact-form">
+                        <div class="ch-form-row">
+                            <div class="ch-form-group">
+                                <label class="ch-form-label" data-translate="yourName">Your Name</label>
+                                <div class="ch-input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" class="ch-form-control" placeholder="John Doe" required>
+                                </div>
+                            </div>
+                            <div class="ch-form-group">
+                                <label class="ch-form-label" data-translate="yourEmail">Your Email</label>
+                                <div class="ch-input-wrapper">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" class="ch-form-control" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ch-form-row">
+                            <div class="ch-form-group">
+                                <label class="ch-form-label" data-translate="phoneNumber">Phone Number</label>
+                                <div class="ch-input-wrapper">
+                                    <i class="fas fa-phone"></i>
+                                    <input type="tel" class="ch-form-control" placeholder="+91 98765 43210" required>
+                                </div>
+                            </div>
+                            <div class="ch-form-group">
+                                <label class="ch-form-label" data-translate="subject">Subject</label>
+                                <div class="ch-input-wrapper">
+                                    <i class="fas fa-bookmark"></i>
+                                    <select class="ch-form-control">
+                                        <option value="" data-translate="selectSubject">Select Subject</option>
+                                        <option value="admission" data-translate="admission">Admission Enquiry</option>
+                                        <option value="courses" data-translate="coursesEnquiry">Courses Enquiry</option>
+                                        <option value="other" data-translate="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ch-form-group">
+                            <label class="ch-form-label" data-translate="message">Your Message</label>
+                            <div class="ch-input-wrapper">
+                                <i class="fas fa-comment-alt"></i>
+                                <textarea class="ch-form-control" rows="4" placeholder="Type your message here..." required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="ch-submit-btn">
+                            <span data-translate="sendMessage">Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="ch-info-container">
+                    <div class="ch-info-cards">
+                        <div class="ch-info-card ch-location">
+                            <div class="ch-card-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="ch-card-content">
+                                <h4 data-translate="visitUs">Visit Us</h4>
+                                <p>1st Floor, Building No 1, Above Lovely Dhaba,<br>
+                                   near Football Chownk, Jalandhar,<br>
+                                   Punjab 144003</p>
+                            </div>
+                        </div>
+
+                        <div class="ch-info-card ch-contact">
+                            <div class="ch-card-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="ch-card-content">
+                                <h4 data-translate="contactDetails">Contact Details</h4>
+                                <div class="ch-contact-links">
+                                    <a href="tel:+919569102053" class="ch-contact-link">
+                                        <i class="fas fa-phone-alt"></i>
+                                        +91 95691 02053
+                                    </a>
+                                    <a href="mailto:competitionhackers@gmail.com" class="ch-contact-link">
+                                        <i class="fas fa-envelope"></i>
+                                        competitionhackers@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ch-info-card ch-hours">
+                            <div class="ch-card-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="ch-card-content">
+                                <h4 data-translate="workingHours">Working Hours</h4>
+                                <div class="ch-schedule">
+                                    <div class="ch-schedule-item">
+                                        <span class="ch-day" data-translate="monFri">Monday - Friday</span>
+                                        <span class="ch-time">10:00 AM - 6:00 PM</span>
+                                    </div>
+                                    <div class="ch-schedule-item">
+                                        <span class="ch-day" data-translate="saturday">Saturday</span>
+                                        <span class="ch-time">10:00 AM - 5:00 PM</span>
+                                    </div>
+                                    <div class="ch-schedule-item ch-closed">
+                                        <span class="ch-day" data-translate="sunday">Sunday</span>
+                                        <span class="ch-time" data-translate="closed">Closed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="ch-social-links">
+                        <h4 data-translate="followUs">Follow Us</h4>
+                        <div class="ch-social-icons">
+                            <a href="#" class="ch-social-icon facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="ch-social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="ch-social-icon twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="ch-social-icon youtube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="ch-map-section">
+            <div class="ch-map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3407.5721722888387!2d74.89404451497795!3d31.637923181330837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDM4JzE2LjUiTiA3NMKwNTMnNDYuNCJF!5e0!3m2!1sen!2sin!4v1639913777777!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="app-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="app-content">
+                    <span class="section-subtitle" data-translate="mobileApp">Mobile App</span>
+                    <h2 data-translate="getOurApp">Get Our UPSC Preparation App</h2>
+                    <p class="app-description" data-translate="appDescription">
+                        COMPETITION HACKERS IAS/PCS ACADEMY brings you a comprehensive mobile platform for seamless learning management. Experience the perfect blend of modern technology and education excellence.
+                    </p>
+                    <ul class="app-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span data-translate="attendanceTracking">Smart Attendance Tracking System</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span data-translate="feesManagement">Integrated Fees Management</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span data-translate="homeworkSubmission">Digital Homework Submission Portal</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span data-translate="performanceAnalytics">Advanced Performance Analytics</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span data-translate="smartNotifications">Instant Updates & Smart Notifications</span>
+                        </li>
+                    </ul>
+                    <div class="app-download">
+                        <a href="https://play.google.com/store/apps/details?id=co.april2019.cha" 
+                           class="download-btn" target="_blank">
+                            <img src="images/Google_Play_Store_badge_EN.svg.png" alt="Get it on Google Play" data-translate="getItOnPlayStore">
+                        </a>
+                        <div class="download-stats">
+                            <div class="stat-item">
+                                <span class="number">100+</span>
+                                <span class="label" data-translate="downloads">Downloads</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="number">4.5</span>
+                                <span class="label" data-translate="rating">Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="app-showcase">
+                    <div class="phone-mockup">
+                        <div class="screen-slider">
+                            <img src="images/appshot.png" alt="App Screenshot" class="screen">
+                            <img src="images/Screenshot (1).png" alt="App Screenshot" class="screen">
+                            <img src="images/Screenshot (2).png" alt="App Screenshot" class="screen">
+                            <img src="images/Screenshot (3).png" alt="App Screenshot" class="screen">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+   <!-- Scroll to Top Button -->
+   <button class="ch-scroll-top" aria-label="Scroll to Top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+ <!-- Enhanced Footer Section -->
+<footer class="ch-footer">
+    <div class="container">
+        <!-- Footer Main Content -->
+        <div class="ch-footer-content">
+            <div class="row">
+                <!-- Institute Info -->
+                <div class="col-lg-4 col-md-6 ch-footer-col">
+                    <div class="ch-footer-info">
+                        <img src="images/logo.png" alt="Competition Hackers" class="ch-footer-logo">
+                        <p data-translate="footerAbout">Empowering aspirants to achieve their dreams of becoming civil servants through quality education and mentorship.</p>
+                        <div class="ch-social-links">
+                            <a href="#" class="ch-social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="ch-social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="ch-social-link" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="ch-social-link" aria-label="Telegram">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 ch-footer-col">
+                    <h4 data-translate="quickLinks">Quick Links</h4>
+                    <ul class="ch-footer-links">
+                        <li><a href="#home" data-translate="home">Home</a></li>
+                        <li><a href="#courses" data-translate="courses">Courses</a></li>
+                        <li><a href="#faculty" data-translate="faculty">Faculty</a></li>
+                        <li><a href="#reviews" data-translate="reviews">Reviews</a></li>
+                        <li><a href="#contact" data-translate="contact">Contact</a></li>
+                        <li><a href="#blog" data-translate="blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Our Courses -->
+                <div class="col-lg-3 col-md-6 ch-footer-col">
+                    <h4 data-translate="ourCourses">Our Courses</h4>
+                    <ul class="ch-footer-links">
+                        <li><a href="#gs" data-translate="gsFoundation">GS Foundation Course</a></li>
+                        <li><a href="#optional" data-translate="optionalSubjects">Optional Subjects</a></li>
+                        <li><a href="#interview" data-translate="interviewPrep">Interview Preparation</a></li>
+                        <li><a href="#test" data-translate="testSeries">Test Series</a></li>
+                        <li><a href="#current" data-translate="currentAffairs">Current Affairs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-md-6 ch-footer-col">
+                    <h4 data-translate="contactInfo">Contact Info</h4>
+                    <ul class="ch-footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-translate="address">Jalandhar, Punjab 144003</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919569102053">9876543210</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:competitionhackers@gmail.com">competitionhackers@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span data-translate="workingHours">Mon - Sat: 9:00 AM - 7:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="ch-footer-bottom">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="ch-copyright">
+                        © <span id="currentYear">2024</span> 
+                        <span data-translate="copyrightText">Competition Hackers. All rights reserved.</span>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="ch-footer-bottom-links">
+                        <li><a href="#privacy" data-translate="privacyPolicy">Privacy Policy</a></li>
+                        <li><a href="#terms" data-translate="termsConditions">Terms & Conditions</a></li>
+                        <li><a href="#sitemap" data-translate="sitemap">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="ch-scroll-top" aria-label="Scroll to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
